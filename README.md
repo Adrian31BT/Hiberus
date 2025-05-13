@@ -120,7 +120,7 @@ ng serve
 
 ### Modelo de Datos
 
-- Empleado
+## Empleado
 - ID
 - Nombre
 - Apellido
@@ -131,7 +131,7 @@ ng serve
 - Estado (Activo/Inactivo)
 - Departamento (relación)
 
-### Departamento
+## Departamento
 
 - ID
 - Nombre

@@ -120,30 +120,30 @@ ng serve
 
 ### Modelo de Datos
 
-Empleado
-ID
-Nombre
-Apellido
-Edad
-Salario
-Fecha de inicio
-Fecha de fin (opcional)
-Estado (Activo/Inactivo)
-Departamento (relación)
+- Empleado
+- ID
+- Nombre
+- Apellido
+- Edad
+- Salario
+- Fecha de inicio
+- Fecha de fin (opcional)
+- Estado (Activo/Inactivo)
+- Departamento (relación)
 
 ### Departamento
 
-ID
-Nombre
-Estado
+- ID
+- Nombre
+- Estado
 
 ### Requisitos
 
-Node.js v22.12.0
-Angular CLI: 19.2.3
-JDK 21
-Docker y Docker Compose
-Maven
+- Node.js v22.12.0
+- Angular CLI: 19.2.3
+- JDK 21
+- Docker y Docker Compose
+- Maven
 
 ### Estructura del Proyecto
 

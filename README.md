@@ -60,7 +60,7 @@ Este proyecto implementa una aplicación web para la gestión de empleados y dep
 
 ### Frontend
 
-- Angular 19
+- Angular 19.2.3
 - Bootstrap
 - TypeScript
 
@@ -84,9 +84,10 @@ docker-compose up -d
 
 ### La aplicación estará disponible en:
 
-Frontend: http://localhost:4200
-Backend: http://localhost:8080
-Desarrollo local
+- Frontend: http://localhost:4200
+- Backend: http://localhost:8080
+
+### Desarrollo local
 
 ## Backend:
 

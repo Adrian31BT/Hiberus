@@ -1,0 +1,143 @@
+ .metrics-content {
+    margin-left: 250px;
+    padding: 30px;
+    background-color: #f2f5fc;
+    background-image: linear-gradient(to bottom right, #1a1a2e, #16213e);
+    color: #fff;
+    min-height: 100vh;
+  }
+  
+  .content-header {
+    margin-bottom: 2rem;
+    position: relative;
+  }
+  
+  .header-line {
+    height: 3px;
+    width: 120px;
+    background: linear-gradient(to right, #40E0D0, rgba(64, 224, 208, 0.2));
+    margin-top: -5px;
+    margin-bottom: 30px;
+  }
+  
+  .metric-card {
+    background-color: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border-radius: 12px;
+    padding: 25px;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+    border-left: 3px solid #40E0D0;
+    transition: all 0.3s ease;
+  }
+  
+  .metric-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+  }
+  
+  .metric-icon {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 2.5rem;
+    opacity: 0.15;
+    color: #40E0D0;
+  }
+  
+  .metric-content {
+    position: relative;
+    z-index: 2;
+  }
+  
+  .metric-title {
+    color: #40E0D0;
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  
+  .employee-name {
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+    color: #ffffff;
+    font-size: 1.3rem;
+  }
+  
+  .metric-value {
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin-bottom: 0;
+  }
+  
+  .salary {
+    color: #4CE0B3;
+  }
+  
+  .age {
+    color: #40C0E0;
+  }
+  
+  .count {
+    color: #40A0E0;
+  }
+  
+  .text-turquoise {
+    color: #40E0D0;
+  }
+  
+  .btn-turquoise {
+    background-color: #40E0D0;
+    color: #16213e;
+    border: none;
+    padding: 10px 24px;
+    font-weight: 600;
+    border-radius: 30px;
+    box-shadow: 0 5px 15px rgba(64, 224, 208, 0.3);
+    transition: all 0.3s ease;
+  }
+  
+  .btn-turquoise:hover {
+    background-color: #35CCBD;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(64, 224, 208, 0.4);
+  }
+  
+  .btn-outline-turquoise {
+    color: #40E0D0;
+    border: 2px solid #40E0D0;
+    background: transparent;
+    font-weight: 500;
+    border-radius: 30px;
+    transition: all 0.3s ease;
+  }
+  
+  .btn-outline-turquoise:hover {
+    background-color: rgba(64, 224, 208, 0.1);
+    color: #40E0D0;
+  }
+  
+  .alert-custom {
+    background-color: rgba(255, 107, 107, 0.1);
+    border-left: 3px solid #ff6b6b;
+    color: #fff;
+    border-radius: 8px;
+    padding: 16px 20px;
+    display: flex;
+    align-items: center;
+  }
+  
+  @media (max-width: 768px) {
+    .metrics-content {
+      margin-left: 60px;
+      padding: 20px;
+    }
+    
+    .metric-value {
+      font-size: 1.8rem;
+    }
+  }

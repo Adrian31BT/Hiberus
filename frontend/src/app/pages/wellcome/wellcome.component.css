@@ -1,0 +1,105 @@
+  .welcome-container {
+      background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+  }
+
+  .welcome-logo {
+      animation: pulse 2s infinite;
+  }
+
+  .text-turquoise {
+      color: #40E0D0;
+      font-weight: 600;
+  }
+
+  .btn-turquoise {
+      background-color: #40E0D0;
+      color: #16213e;
+      border: none;
+  }
+
+  .btn-turquoise:hover {
+      background-color: #30d0c0;
+      color: #0f1525;
+      transform: translateY(-3px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  }
+
+  .company-name {
+      letter-spacing: 2px;
+      font-weight: 700;
+      font-size: 5rem;
+      text-transform: lowercase;
+  }
+
+  .responsive-hr {
+      width: 50%;
+  }
+
+  @keyframes pulse {
+      0% {
+          transform: scale(1);
+      }
+
+      50% {
+          transform: scale(1.05);
+      }
+
+      100% {
+          transform: scale(1);
+      }
+  }
+
+  .btn {
+      transition: all 0.3s ease;
+      border-radius: 30px;
+  }
+
+  .btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  }
+
+  hr {
+      border-color: rgba(255, 255, 255, 0.2);
+  }
+
+  /* Media Queries para responsividad */
+  @media (max-width: 1200px) {
+      .company-name {
+          font-size: 4.5rem;
+      }
+  }
+
+  @media (max-width: 992px) {
+      .company-name {
+          font-size: 4rem;
+      }
+  }
+
+  @media (max-width: 768px) {
+      .company-name {
+          font-size: 3.5rem;
+      }
+
+      .responsive-hr {
+          width: 70%;
+      }
+  }
+
+  @media (max-width: 576px) {
+      .company-name {
+          font-size: 3rem;
+      }
+
+      h1.fw-bold {
+          font-size: 1.5rem;
+      }
+
+      .lead {
+          font-size: 1rem;
+      }
+
+      .responsive-hr {
+          width: 80%;
+      }
+  }

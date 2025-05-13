@@ -1,0 +1,126 @@
+  .employee-form .form-label {
+    color: #40e0d0;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+  }
+
+  .custom-input {
+    background-color: rgba(255, 255, 255, 0.07);
+    border: 1px solid rgba(64, 224, 208, 0.3);
+    color: #fff;
+    border-radius: 8px;
+    padding: 0.6rem 1rem;
+  }
+
+  .custom-input:focus {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-color: #40e0d0;
+    box-shadow: 0 0 0 0.25rem rgba(64, 224, 208, 0.25);
+    color: #fff;
+  }
+
+  .custom-input::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+  }
+
+  .custom-input option {
+    background-color: #16213e;
+    color: #fff;
+  }
+
+  .invalid-feedback {
+    color: #ff6b6b;
+  }
+
+  .is-invalid {
+    border-color: #ff6b6b !important;
+  }
+  .btn-custom {
+    background-color: #40e0d0;
+    color: #16213e;
+    border: none;
+    padding: 10px 20px;
+    font-weight: 600;
+    border-radius: 6px;
+    box-shadow: 0 4px 12px rgba(64, 224, 208, 0.3);
+    transition: all 0.3s ease;
+  }
+
+  .btn-custom:hover:not([disabled]) {
+    background-color: #35ccbd;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(64, 224, 208, 0.4);
+  }
+
+  .btn-custom:active:not([disabled]) {
+    transform: translateY(0);
+  }
+
+  .btn-custom:disabled {
+    background-color: rgba(64, 224, 208, 0.5);
+    cursor: not-allowed;
+  }
+
+  .btn-outline-custom {
+    background-color: transparent;
+    color: #40e0d0;
+    border: 2px solid #40e0d0;
+    padding: 9px 19px;
+    font-weight: 500;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+  }
+
+  .btn-outline-custom:hover {
+    background-color: rgba(64, 224, 208, 0.1);
+    color: #40e0d0;
+    transform: translateY(-2px);
+  }
+
+  .btn-outline-custom:active {
+    transform: translateY(0);
+  }
+
+  .spinner-border-sm {
+    border-width: 0.15em;
+    border-right-color: transparent !important;
+  }
+
+  .no-spinner::-webkit-outer-spin-button,
+  .no-spinner::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  .no-spinner {
+    -moz-appearance: textfield;
+    appearance: textfield;
+  }
+
+  .date-input-container {
+    position: relative;
+  }
+
+  .custom-date-input::-webkit-calendar-picker-indicator {
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%2340E0D0' class='bi bi-calendar3' viewBox='0 0 16 16'><path d='M14 0H2a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zM1 3.857C1 3.384 1.448 3 2 3h12c.552 0 1 .384 1 .857v10.286c0 .473-.448.857-1 .857H2c-.552 0-1-.384-1-.857V3.857z'/><path d='M6.5 7a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm-9 3a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm-9 3a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2z'/></svg>");
+    position: absolute;
+    right: 10px;
+    opacity: 0.7;
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+  }
+
+  .custom-date-input::-webkit-calendar-picker-indicator:hover {
+    opacity: 1;
+  }
+
+  .date-input-container .form-control.is-invalid {
+    padding-right: 45px;
+  }
+
+  .date-input-container .invalid-feedback {
+    display: block;
+    position: relative;
+    margin-top: 0.25rem;
+  }

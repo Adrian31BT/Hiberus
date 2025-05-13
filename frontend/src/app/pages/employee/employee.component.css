@@ -1,0 +1,176 @@
+.employee-content {
+    margin-left: 250px;
+    padding: 30px;
+    background-color: #f2f5fc;
+    background-image: linear-gradient(to bottom right, #1a1a2e, #16213e);
+    color: #fff;
+    min-height: 100vh;
+  }
+
+  .content-header {
+    margin-bottom: 2rem;
+    position: relative;
+  }
+
+  .header-line {
+    height: 3px;
+    width: 120px;
+    background: linear-gradient(to right, #40e0d0, rgba(64, 224, 208, 0.2));
+    margin-top: -5px;
+    margin-bottom: 30px;
+  }
+
+  .employee-table {
+    background-color: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+    color: #fff;
+    border-collapse: separate;
+    border-spacing: 0;
+  }
+
+  .employee-table thead {
+    border-bottom: 1px solid rgba(64, 224, 208, 0.3);
+  }
+
+  .employee-table thead th {
+    padding: 16px 12px;
+    color: #40e0d0;
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border-bottom: none;
+    background-color: rgba(0, 0, 0, 0.2);
+  }
+
+  .employee-table tbody tr {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+    transition: all 0.2s ease;
+  }
+
+  .employee-table tbody tr:hover {
+    background-color: rgba(64, 224, 208, 0.1);
+  }
+
+  .employee-table td {
+    padding: 14px 12px;
+    vertical-align: middle;
+    border-top: none;
+  }
+
+  .id-badge {
+    background-color: rgba(64, 224, 208, 0.15);
+    color: #40e0d0;
+    padding: 4px 10px;
+    border-radius: 12px;
+    font-weight: 600;
+    font-size: 0.9rem;
+  }
+
+  .department-name {
+    color: #40c0e0;
+    font-weight: 500;
+  }
+
+  .salary-text {
+    color: #4ce0b3;
+    font-weight: 600;
+  }
+
+  .badge {
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 500;
+  }
+
+  .bg-success {
+    background-color: rgba(76, 224, 179, 0.2) !important;
+    color: #4ce0b3 !important;
+    border: 1px solid rgba(76, 224, 179, 0.3);
+  }
+
+  .bg-danger {
+    background-color: rgba(255, 107, 107, 0.2) !important;
+    color: #ff6b6b !important;
+    border: 1px solid rgba(255, 107, 107, 0.3);
+  }
+
+  .btn-turquoise {
+    background-color: #40e0d0;
+    color: #16213e;
+    border: none;
+    padding: 10px 24px;
+    font-weight: 600;
+    border-radius: 30px;
+    box-shadow: 0 5px 15px rgba(64, 224, 208, 0.3);
+    transition: all 0.3s ease;
+  }
+
+  .btn-turquoise:hover {
+    background-color: #35ccbd;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(64, 224, 208, 0.4);
+  }
+
+  .btn-outline-turquoise {
+    color: #40e0d0;
+    border: 2px solid #40e0d0;
+    background: transparent;
+    font-weight: 500;
+    border-radius: 30px;
+    transition: all 0.3s ease;
+  }
+
+  .btn-outline-turquoise:hover {
+    background-color: rgba(64, 224, 208, 0.1);
+    color: #40e0d0;
+  }
+
+  .alert-custom {
+    background-color: rgba(255, 107, 107, 0.1);
+    border-left: 3px solid #ff6b6b;
+    color: #fff;
+    border-radius: 8px;
+    padding: 16px 20px;
+    display: flex;
+    align-items: center;
+  }
+
+  .button-group {
+    display: flex;
+    align-items: center;
+  }
+
+  .btn-success-custom {
+    background-color: #40e0d0;
+    color: #16213e;
+    border: none;
+    padding: 10px 24px;
+    font-weight: 600;
+    border-radius: 30px;
+    box-shadow: 0 5px 15px rgba(32, 178, 170, 0.3);
+    transition: all 0.3s ease;
+  }
+
+  .btn-success-custom:hover {
+    background-color: #35ccbd;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(32, 178, 170, 0.4);
+  }
+
+  @media (max-width: 768px) {
+    .employee-content {
+      margin-left: 60px;
+      padding: 20px;
+    }
+
+    .employee-table th,
+    .employee-table td {
+      padding: 10px 8px;
+      font-size: 0.9rem;
+    }
+  }

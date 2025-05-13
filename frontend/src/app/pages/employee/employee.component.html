@@ -1,0 +1,139 @@
+<app-menu></app-menu>
+
+<div class="employee-content">
+  <div class="content-header">
+    <div class="d-flex justify-content-between align-items-center mb-3">
+      <h1 class="mb-0">Gestión de Empleados</h1>
+      <div class="button-group">
+        <button
+          class="btn btn-success-custom me-2"
+          (click)="openAddEmployeeModal()"
+        >
+          <i class="bi bi-person-plus me-2"></i> Agregar Empleado
+        </button>
+        <button class="btn btn-turquoise" (click)="loadEmployees()">
+          <i class="bi bi-arrow-clockwise me-2"></i> Actualizar
+        </button>
+      </div>
+    </div>
+    <div class="header-line"></div>
+  </div>
+
+  @if (loading) {
+  <div class="d-flex justify-content-center my-5">
+    <div class="spinner-border text-turquoise" role="status">
+      <span class="visually-hidden">Cargando...</span>
+    </div>
+  </div>
+  } @else if (error) {
+  <div class="alert alert-custom" role="alert">
+    <i class="bi bi-exclamation-triangle me-2"></i>
+    {{ errorMessage }}
+    <button class="btn btn-outline-turquoise ms-3" (click)="loadEmployees()">
+      Reintentar
+    </button>
+  </div>
+  } @else if (employees.length === 0) {
+  <div class="alert alert-info text-center">
+    <i class="bi bi-info-circle me-2"></i> No hay empleados disponibles.
+  </div>
+  } @else {
+  <div class="table-responsive">
+    <table class="table employee-table">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Nombre</th>
+          <th>Apellido</th>
+          <th>Edad</th>
+          <th>Salario</th>
+          <th>Departamento</th>
+          <th>Fecha Inicio</th>
+          <th>Fecha Fin</th>
+          <th>Estado</th>
+        </tr>
+      </thead>
+      <tbody>
+        @for (employee of employees; track employee.employeeId) {
+        <tr>
+          <td>
+            <span class="id-badge">{{ employee.employeeId }}</span>
+          </td>
+          <td>{{ employee.employeeName }}</td>
+          <td>{{ employee.employeeLastName }}</td>
+          <td>{{ employee.age }} años</td>
+          <td class="salary-text">
+            {{
+              employee.salary
+                ? (employee.salary | currency : "USD" : "symbol" : "1.0-0")
+                : "N/A"
+            }}
+          </td>
+          <td>
+            <span class="department-name">{{
+              employee.department.departmentName
+            }}</span>
+          </td>
+          <td>{{ getFormattedDate(employee.initDate) }}</td>
+          <td>{{ getFormattedDate(employee.endDate) }}</td>
+          <td>
+            <span [class]="getStatusClass(employee.employeeStatus)">{{
+              getStatusText(employee.employeeStatus)
+            }}</span>
+          </td>
+        </tr>
+        }
+      </tbody>
+    </table>
+  </div>
+  }
+</div>
+
+<!-- Agregar al final de employee.component.html antes de cerrar </div> -->
+<!-- Modal para agregar empleado -->
+<div class="modal fade" id="addEmployeeModal" tabindex="-1" aria-labelledby="addEmployeeModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content custom-modal">
+      <div class="modal-header">
+        <h5 class="modal-title" id="addEmployeeModalLabel">Agregar Nuevo Empleado</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <app-employeeform 
+          *ngIf="showEmployeeForm"
+          [departments]="departments"
+          (employeeAdded)="onEmployeeAdded($event)">
+        </app-employeeform>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  /* Estilos para el modal */
+  .custom-modal {
+    background-color: #16213e;
+    color: #fff;
+    border-radius: 12px;
+    border: 1px solid rgba(64, 224, 208, 0.2);
+  }
+  
+  .custom-modal .modal-header {
+    border-bottom: 1px solid rgba(64, 224, 208, 0.2);
+    padding: 1.5rem;
+  }
+  
+  .custom-modal .modal-title {
+    color: #40E0D0;
+    font-weight: 600;
+    font-size: 1.4rem;
+  }
+  
+  .custom-modal .modal-body {
+    padding: 1.5rem;
+  }
+  
+  .btn-close-white {
+    filter: invert(1) brightness(200%);
+  }
+</style>

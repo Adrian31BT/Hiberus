@@ -1,0 +1,161 @@
+<form [formGroup]="employeeForm" (ngSubmit)="onSubmit()" class="employee-form">
+  <div class="alert alert-danger" *ngIf="error">
+    {{ errorMessage }}
+  </div>
+
+  <div class="row mb-4">
+    <div class="col-md-6">
+      <div class="form-group">
+        <label for="employeeName" class="form-label">Nombre *</label>
+        <input
+          type="text"
+          id="employeeName"
+          formControlName="employeeName"
+          class="form-control custom-input"
+          [ngClass]="{ 'is-invalid': nameInvalid }"
+        />
+        <div class="invalid-feedback" *ngIf="nameInvalid">
+          El nombre es obligatorio y debe tener al menos 2 caracteres
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-6">
+      <div class="form-group">
+        <label for="employeeLastName" class="form-label">Apellido *</label>
+        <input
+          type="text"
+          id="employeeLastName"
+          formControlName="employeeLastName"
+          class="form-control custom-input"
+          [ngClass]="{ 'is-invalid': lastNameInvalid }"
+        />
+        <div class="invalid-feedback" *ngIf="lastNameInvalid">
+          El apellido es obligatorio y debe tener al menos 2 caracteres
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row mb-4">
+    <div class="col-md-6">
+      <div class="form-group">
+        <label for="age" class="form-label">Edad *</label>
+        <input
+          type="number"
+          id="age"
+          formControlName="age"
+          class="form-control custom-input no-spinner"
+          [ngClass]="{ 'is-invalid': ageInvalid }"
+          min="0"
+        />
+        <div class="invalid-feedback" *ngIf="ageInvalid">
+          La edad debe ser un número positivo entre 18 y 80
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-6">
+      <div class="form-group">
+        <label for="salary" class="form-label">Salario</label>
+        <input
+          type="number"
+          id="salary"
+          formControlName="salary"
+          class="form-control custom-input no-spinner"
+          [ngClass]="{ 'is-invalid': salaryInvalid }"
+          step="0.01"
+          min="0"
+        />
+        <div class="invalid-feedback" *ngIf="salaryInvalid">
+          El salario debe ser un valor numérico válido y positivo
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row mb-4">
+    <div class="col-md-6">
+      <div class="form-group date-input-container">
+        <label for="initDate" class="form-label">Fecha de Inicio *</label>
+        <input
+          type="date"
+          id="initDate"
+          formControlName="initDate"
+          class="form-control custom-input custom-date-input"
+          [ngClass]="{ 'is-invalid': initDateInvalid }"
+        />
+        <div class="invalid-feedback" *ngIf="initDateInvalid">
+          La fecha de inicio es obligatoria y debe tener un formato válido
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-6">
+      <div class="form-group date-input-container">
+        <label for="endDate" class="form-label">Fecha de Fin</label>
+        <input
+          type="date"
+          id="endDate"
+          formControlName="endDate"
+          class="form-control custom-input custom-date-input"
+        />
+      </div>
+    </div>
+  </div>
+
+  <div class="row mb-4">
+    <div class="col-md-6">
+      <div class="form-group">
+        <label for="departmentId" class="form-label">Departamento *</label>
+        <select
+          id="departmentId"
+          formControlName="departmentId"
+          class="form-select custom-input"
+          [ngClass]="{ 'is-invalid': departmentInvalid }"
+        >
+          <option value="" disabled>Seleccione un departamento</option>
+          <option *ngFor="let dept of departments" [value]="dept.departmentId">
+            {{ dept.departmentName }}
+          </option>
+        </select>
+        <div class="invalid-feedback" *ngIf="departmentInvalid">
+          Debe seleccionar un departamento
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-6">
+      <div class="form-group">
+        <label for="employeeStatus" class="form-label">Estado *</label>
+        <select
+          id="employeeStatus"
+          formControlName="employeeStatus"
+          class="form-select custom-input"
+        >
+          <option value="A">Activo</option>
+          <option value="I">Inactivo</option>
+        </select>
+      </div>
+    </div>
+  </div>
+
+  <div class="d-flex justify-content-end mt-4">
+    <button
+      type="button"
+      class="btn btn-outline-custom me-2"
+      data-bs-dismiss="modal"
+    >
+      Cancelar
+    </button>
+    <button type="submit" class="btn btn-custom" [disabled]="loading">
+      <span
+        *ngIf="loading"
+        class="spinner-border spinner-border-sm me-2"
+        role="status"
+        aria-hidden="true"
+      ></span>
+      Guardar Empleado
+    </button>
+  </div>
+</form>

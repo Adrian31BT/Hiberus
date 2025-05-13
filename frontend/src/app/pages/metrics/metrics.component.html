@@ -1,0 +1,86 @@
+<app-menu></app-menu>
+
+<div class="metrics-content">
+  <div class="content-header">
+    <div class="d-flex justify-content-between align-items-center mb-3">
+      <h1 class="mb-0">Métricas de Empleados</h1>
+      <button class="btn btn-turquoise" (click)="loadMetrics()">
+        <i class="bi bi-arrow-clockwise me-2"></i> Actualizar Métricas
+      </button>
+    </div>
+    <div class="header-line"></div>
+  </div>
+  
+  @if (loading) {
+    <div class="d-flex justify-content-center my-5">
+      <div class="spinner-border text-turquoise" role="status">
+        <span class="visually-hidden">Cargando...</span>
+      </div>
+    </div>
+  } @else if (error) {
+    <div class="alert alert-custom" role="alert">
+      <i class="bi bi-exclamation-triangle me-2"></i>
+      {{ errorMessage }}
+      <button class="btn btn-outline-turquoise ms-3" (click)="loadMetrics()">Reintentar</button>
+    </div>
+  } @else {
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+      <!-- Empleado con Mayor Salario -->
+      <div class="col">
+        <div class="metric-card">
+          <div class="metric-icon">
+            <i class="bi bi-cash-stack"></i>
+          </div>
+          <div class="metric-content">
+            <h5 class="metric-title">Mayor Salario</h5>
+            @if (highestSalaryEmployee) {
+              <h3 class="employee-name">{{ highestSalaryEmployee.employeeName }} {{ highestSalaryEmployee.employeeLastName }}</h3>
+              <p class="metric-value salary">
+                {{ highestSalaryEmployee.salary | currency:'USD':'symbol':'1.0-0' }}
+              </p>
+            } @else {
+              <p class="no-data-message">No hay datos disponibles, intente actualizar</p>
+            }
+          </div>
+        </div>
+      </div>
+      
+      <!-- Empleado más Joven -->
+      <div class="col">
+        <div class="metric-card">
+          <div class="metric-icon">
+            <i class="bi bi-person-badge"></i>
+          </div>
+          <div class="metric-content">
+            <h5 class="metric-title">Empleado más Joven</h5>
+            @if (youngestEmployee) {
+              <h3 class="employee-name">{{ youngestEmployee.employeeName }} {{ youngestEmployee.employeeLastName }}</h3>
+              <p class="metric-value age">
+                {{ youngestEmployee.age }} años
+              </p>
+            } @else {
+              <p class="no-data-message">No hay datos disponibles, intente actualizar</p>
+            }
+          </div>
+        </div>
+      </div>
+      
+      <!-- Contrataciones Último Mes -->
+      <div class="col">
+        <div class="metric-card">
+          <div class="metric-icon">
+            <i class="bi bi-calendar-plus"></i>
+          </div>
+          <div class="metric-content">
+            <h5 class="metric-title">Último Mes</h5>
+            <h3 class="employee-name">Nuevos Empleados</h3>
+            <p class="metric-value count">
+              {{ employeeCount }}
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  }
+</div>
+

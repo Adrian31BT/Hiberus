@@ -104,7 +104,7 @@ npm install
 ng serve
 ```
 
-### Funcionalidades Clave
+## Funcionalidades Clave
 
 1. **Dashboard de Métricas**
    Visualización del empleado con mayor salario
@@ -118,9 +118,9 @@ ng serve
    Visualización de departamentos disponibles
    Asociación de empleados con departamentos
 
-### Modelo de Datos
+## Modelo de Datos
 
-## Empleado
+### Empleado
 - ID
 - Nombre
 - Apellido
@@ -131,13 +131,13 @@ ng serve
 - Estado (Activo/Inactivo)
 - Departamento (relación)
 
-## Departamento
+### Departamento
 
 - ID
 - Nombre
 - Estado
 
-### Requisitos
+## Requisitos
 
 - Node.js v22.12.0
 - Angular CLI: 19.2.3
@@ -145,7 +145,7 @@ ng serve
 - Docker y Docker Compose
 - Maven
 
-### Estructura del Proyecto
+## Estructura del Proyecto
 
 El proyecto está organizado conceptualmente en:
 
@@ -154,6 +154,6 @@ El proyecto está organizado conceptualmente en:
 - **Acceso a datos**: Mediante repositorios JPA
 - **Interfaz de usuario**: Componentes Angular
 
-### Contacto
+## Contacto
 
 Ing. Adrian Bacilio Tumbaco - adrian31baciliot@gmail.com

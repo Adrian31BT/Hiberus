@@ -87,7 +87,7 @@ public class EmployeeService {
         }
 
         Optional<Employee> employeeWithHighestSalaryOpt = allEmployees.stream()
-                .filter(e -> e.getSalary() != null)
+                .filter(e -> e.getSalary() != null && "A".equals(e.getEmployeeStatus()))
                 .max(Comparator.comparing(Employee::getSalary));
 
         if (employeeWithHighestSalaryOpt.isEmpty()) {

@@ -88,7 +88,7 @@ public class EmployeeService {
 
         Optional<Employee> employeeWithHighestSalaryOpt = allEmployees.stream()
                 .filter(e -> e.getSalary() != null)
-                .max(Comparator.comparing(Employee::getSalary));
+                .min(Comparator.comparing(Employee::getSalary));
 
         if (employeeWithHighestSalaryOpt.isEmpty()) {
             throw new EmployeeNotFoundException(

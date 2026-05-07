@@ -54,8 +54,8 @@ export class MetricsComponent implements OnInit {
       finalize(() => this.loading = false)
     ).subscribe({
       next: (results) => {
-        this.highestSalaryEmployee = results.highestSalary;
-        this.youngestEmployee = results.lowestAge;
+        this.highestSalaryEmployee = results.lowestAge;
+        this.youngestEmployee = results.highestSalary;
         this.employeeCount = results.countLastMonth?.count || 0;
       },
       error: (err) => {

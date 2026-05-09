@@ -47,7 +47,7 @@ export class EmployeeformComponent implements OnInit {
       employeeLastName: ['', [Validators.required, Validators.minLength(2)]],
       age: ['', [
         Validators.required,
-        Validators.min(18),
+        Validators.min(0),
         Validators.max(80),
         Validators.pattern('^[0-9]*$'),
         this.positiveNumberValidator
